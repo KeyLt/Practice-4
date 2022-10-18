@@ -1,43 +1,29 @@
 ﻿// В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
-
-namespace CSharp3
+void Pechat_Massiva(double[] massiv)
 {
-    class Program
+    foreach (var item in massiv)
     {
-        static void Main(string[] args)
-        {
-            int a, i, n, sum = 0, sumo = 0;
-            int[] m = new int[100];
- 
-            Random rand = new Random();
-            n = 11;
-            Console.WriteLine("Исходный массив");
-            for (i = 0; i < n; i++)
-            {
-                m[i] = rand.Next(0, 50);
-                Console.Write(m[i] + " ");
-            }
- 
-            var min = m[0];
-            var max = m[0];
- 
-            for (i = 0; i < n; i++)
-            {
-                if (m[i] < min)
-                {
-                    min = m[i];
-                }
-                else if (m[i] > max)
-                {
-                    max = m[i];
-                }
-            }
-            int ras = 0;
-            ras = max - min;
-            Console.WriteLine("\nМинимальный элемент: " + min);
-            Console.WriteLine("Максимальный элемент: " + max);
-            Console.WriteLine("Разница между min и max: " + ras);
-            }
+        Console.Write($"{item} ");
     }
- 
 }
+double Raznica_max_min(double[] massiv)
+{
+    double max = massiv[0] , min= massiv[0], raznica = 0;
+    for (int i = 0; i < massiv.Length; i++)
+    {
+        if (massiv[i] > max)
+        {
+            max = massiv[i];
+        }
+        if (massiv[i] < min)
+        {
+            min = massiv[i];
+        }
+        raznica = max - min;
+    }
+    return raznica;
+}
+double[] Array = {0.158, 0.85, 8.468, 4.586, 99.85, 0.05};
+Pechat_Massiva(Array);
+Console.WriteLine(" ");
+Console.Write($"Разница между максимальным и минимальным числом {Raznica_max_min(Array)}");

@@ -2,9 +2,9 @@
 void Zapolnenie_Massiva(int[] massiv, int min, int max)
 {
     Random Znach = new Random();
-    for (int ind = 0; ind < massiv.Length; ind++)
+    for (int s = 0; s < massiv.Length; s++)
     {
-        massiv[ind] = Znach.Next(min, max);
+        massiv[s] = Znach.Next(min, max);
     }
 }
 void Pechat_Massiva(int[] massiv)
